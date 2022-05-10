@@ -1,0 +1,140 @@
+
+
+    *** VARIABLES ***
+    Las variables en Javascript funcionan como "contenedores" de información, es decir, que las variables nos permiten almacenar cualquier tipo de dato dentro de ellas bajo un "alias" que será el nombre que le asignemos para identificarla (el tipo de dato asignado hace al VALOR de una variable).
+    A medida que vayamos precisando de esta información, accederemos a ellos a través del nombre que le asignamos a la variable que la almacena. 
+    Para indicar que estamos creando un variable, utilizamos las palabras reservadas o palabras claves VAR, LET y CONST. Su estructura básica es la siguiente:
+        [palabra reservada + nombre de la variable + = + valor de la variable]
+            Ejemplos de variables:
+                [var numero = 10]
+                [let numero = 10]
+                [const numero = 10]
+    Las variables pueden ser declaradas (creadas) sin aisgnarles un valor inicial, el cual podrá ser asignado luego, o en caso de ya tener un valor, puedes reasignárselo (modificarlo).
+    Las variables tienen ciertas reglas:
+    -No pueden iniciar con números 
+            Por ejemplo: 
+                [var 1ejercicio =]    <----NO PERMITIDO!
+                [var ejercicio1 =]    <----PERMITIDO!
+    -No pueden iniciar con guión medio '-', pero sí con guión bajo '-' 
+            Por ejemplo: 
+                [var -ejercicio1 =]    <----NO PERMITIDO!
+                [var _ejercicio1 =]    <----PERMITIDO!
+
+    ¿Y si necesito más de una palabra para definir una variable? Pues existen ciertas convenciones para hacerlo:
+        .Underscore: las palabras se separan por un guión bajo '-'
+                Por ejemplo:   
+                    [var nombre_variable =]
+        .Camelcase: la primera palabra en minúsculas y la segunda en mayúsculas
+                Por ejemplo:
+                    [var nombreVariable =]
+        .Lowercase: ambas palabras inician con minúsculas (muy poco utilizado)	
+                Por ejemplo:
+                    [var nombrevariable =]
+
+    Existen 3 formas de crear una variable, es decir, tres palabras reservadas / claves para hacerlo (VAR, LET y CONST):
+        .VAR: forma genérica de definir una función. Pueden iniciarse con o sin valor asignado o reasignarlo más adelante.
+            [var nombre_variable = ]
+        .LET : iguales a las variables con VAR, se comportan prácticamente de la misma forma. Esta palabra clave fue incorporada con ES6.
+            [let nombre_variable = ]
+        .CONST: no pueden iniciarse sin un valor asignado, ni se puede reasignarle su valor luego. Son constantes, es decir, variables que no podrán cambiar.
+            [const nombre_variable = 'valor obligatorio']
+        
+                    
+
+    *** STRINGS *** 
+    Los strings son ni más ni menos que bloques o cadenas de texto, es decir, son textos.
+    La forma de indicar que el tipo de dato que estamos ingresando es un string, debemos colocar su contenido entre comillas dobles " " o sencillas ' '.
+        Por ejemplo: 
+            var mi_nombre = "Gonzalo"
+
+        Otra forma de crear un string es la siguiente:
+            var mi_apellido = String('Fara')
+    Hay que aclarar que el uso de las comillas determina el tipo de dato String, ya que no es lo mismo:
+        var numero1 = 1 (tipo de dato NUMBER)
+        var numero2 = "2"(tipo de dato STRING)
+        
+
+    *** FUNCIONES ***  
+    Las funciones son una serie de instrucciones o procedimientos que realizan una acción determinada. Nos permiten almacenar bloque de código en ellas, para lu
+    Normalmente las funciones inician con la palabra clave FUNCTION (para indicarle a nuestro programa que eso es una función), seguida de su nombre (el nombre debe describir qué hace esa función), seguido de unos paréntesis () donde pueden o no ir argumentos, por último unos corchetes {} que es el cuerpo de la función, donde pondremos nuestro bloque de código a ejecutar.
+    Existen 3 formas de declarar una función:
+        .Declaración de la función (function declaration):
+            function nombre_funcion( argumentos ){
+                -nuestro código a ejecutar - 
+            }
+
+            nombre_funcion()  ---> para que se ejecute, debemos invocarla(mandarla a llamar)
+        
+        .Expresión de la función (function expression): 
+        En este caso la función (sin nombre) es asignada como valor de una variable, por lo que accederemos a la función a través del nombre de ella.
+            const nombre_funcion = function () {
+                -código a ejecutar-
+            }
+
+        .Arrow functions o funciones de flecha:
+        Muy similares a las anteriores, pero su sintaxis es más corta 
+            const nombre_funcion = (argumentos) => {
+                -código a ejecutar-
+            }
+
+            ¿No ves la diferencia? Las arrow functions nos permiten ahorrar líneas de código según la extensión del cuerpo de la función o la cantidad de argumentos
+            Si tomamos el ejemplo anterior, podríamos escribirlo en una sola línea:
+            
+            const nombre_function = argumento => -código a ejecutar
+
+            Al ser un solo argumento, podemos eliminarle los paréntesis(), con la flecha => se indica que lo que le sigue es el código que se va a ejecutar (al ser una sola línea, podemos obviar los corchetes {} )
+
+    Como vimos, a las funciones podemos pasarle argumentos (ninguno, uno o varios separados por una coma ,). Los argumentos son valores que requerirá la función para ejecutar su código. Estos valores pueden o no estar almacenados en una variable.
+
+        Por ejemplo:
+
+        function sumar (n1, n2){
+            var suma = n1 + n2;
+            return suma
+        }
+
+    Podemos pasarle los argumentos de la siguiente forma:
+ 
+        sumar(10,20)  -----> al invocar la función, le pasamos dos números como argumentos.
+
+        var num1 = 10;
+        var num2 = 20
+        sumar(num1, num2)  -----> al invocar la función, le pasamos dos variables como argumentos.
+
+    La palabra return, es la que nos permitirá acceder al resultado de la ejecución de una función, es decir, a lo que nos devuelve. De otra forma, no podremos hacerlo debido a algo llamado Scope (el alcance de los elementos)
+    Además la palabra return detendrá inmediatamente la ejecución del código de la función. 
+
+    function sumar (n1, n2){
+            var resultado = n1 + n2;
+            return resultado
+        }
+
+    la variable resultado no existe fuera de la función, pero podemos almacenarla en una nueva variable por fuera de la función. 
+
+    var resultado_suma = sumar(10,20)     Ahora el resultado de la función está almacenado en la variable 
+    
+
+    
+    *** Declaraciones `if` ***
+    A veces vamos a querer que nuestro código se ejecute basado en una condición. A esto se lo conoce como estructura de control, es decir, que se va a revisar que una condición se cumpla para realizar una determinada acción y, en caso de no cumplirse, ejecutar otra acción.
+    Una declaración IF se estructura de la siguiente manera:
+    
+        if (condicion) {
+            codigo a ejecutarse si se cumple la condición
+        } else {
+            codigo a ejecutarse si no se cumple la condición
+        }
+
+    Por ejemplo: 
+        var puntaje = 1000;
+        if (puntaje > 500) {
+            console.log('Has pasado al siguiente nivel');
+        } else {
+            console.log('No has pasado de nivel')
+        }
+
+    *** Valores booleanos (`true`, `false`) ***
+    Los booleans son tipos de datos primitivos que solo pueden tener dos valores: TRUE o FALSE.
+    En el ejemplo anterior vemos como la condición a cumplirse nos va a retornar TRUE si el puntaje es mayor a 500 y FALSE si es menor. Es decir que el resultado de la verificación de una condición será TRUE o FALSE y en base a eso, se ejecutará un código determinado.
+    Son muy útiles a la hora de comprobar si una condición se cumple (si es verdadera o no), como por ejemplo si un producto está disponible o si un usuario está autenticado. 
+
