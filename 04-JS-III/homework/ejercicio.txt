@@ -1,0 +1,16 @@
+***Arrays***
+
+Los arrays (arreglos) son muy importantes y utilizados en programación ya que pueden contener gran cantidad de información en una sola variable. Podemos decir que los arrays son contenedores de colecciones de datos, es decir que pueden almacenar en ellos gran cantidad y variedad de tipos de datos.
+¿Cómo creamos un array?
+Debemos declarar una variable y su valor lo iniciamos con "[]". Aquí ya estamos indicando que la variable será un array. Luego podemos agregar dentro de los corchetes "[]" tantos tipos de datos como deseemos, separados por una coma ","
+    Por ejemplo:
+        
+        var dias_array = ['Lunes', 'Martes', 'Miércoles', 'Jueves'];
+
+    Aquí vemos como en una sola variable (dias_array) almacenamos 4 strings distintos, cada uno correspondiente a cada día de la semana.
+
+    Como dijimos, en un array podemos almacenar datos de distintos tipos.
+
+        var datos_array = [1, 2, 'Hola', false, true, [3, 4, 5]]
+    En este caso tenemos un arreglo que almacena numeros, strings, booleans y un arreglo.
+    
