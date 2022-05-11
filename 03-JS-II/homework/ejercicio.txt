@@ -1,0 +1,46 @@
+*** FOR LOOP ***
+Los bucles (loops) ejecutan su código mientras una condición se cumpla o deje de cumplirse. Se puede decir que los bucles ofrecen la posibilidad de ejecutar código repetidamente.
+Existen distintos bucles (for, while, do while y más) pero básicamente todos hacen lo mismo, repiten una accion cierta cantidad de veces.
+El BUCLE FOR ejecuta el código mientras una condición es evaluada como verdadera (true) y dejará de ejecutarse cuando la condición deje de cumplirse (es evaluada como 'false').
+¿Cómo se estructura un bucle for?
+    for( expresión inicial(variable); condición; incremento de variable ) {
+        código que se ejecuta mientras se cumpla la condición
+    }
+
+    Por ejemplo:
+    for( let i = 0; i < 10; i++){
+        console.log(i);
+    } // En este caso iniciamos la variable [i] en 0 y le decimos que mientras [i] sea menor a 10, lo imprimimos en consola. Cada vez que la condición ([i] menor a 10) se cumpla, incrementamos la variable [i] en 1 y volvemos a evaluar la condición y volvemos a imprimirlo en pantalla, así hasta que el incremento lleve a [i] a no cumplir la condición (a no ser menor a 10).
+
+
+*** OPERADORES LÓGICOS ***
+Si quisieramos combinar dos o más expresiones (condiciones) y consultar por si alguna se cumple, si se cumplen todas o ninguna de las condiciones se cumple, seguramente utilicemos operadores lógicos como pueden ser "&&", "||" o "!".
+    .&&: 
+        este operador lógico representa la palabra "AND", por lo que podremos compar una condición Y otra condición al mismo tiempo, y en caso de cumplirse ambas se realizará una acción determinada, sino realizará otra.
+
+        Por ejemplo:
+        let numero = 10
+        if(numero > 0 && numero < 20){
+            returnn 'El número cumple ambas condiciones'
+        } // En este caso tenemos un número(10) que evaluaremos bajo dos condiciones: Si es mayor a 0 Y (&&) si es menor a 15. Como ambas condiciones se cumplen, son verdaderas, retornamos el mensaje.
+
+    .||:
+        así como existe el operador "AND"(&&), también existe el operador "OR"(||). En este casso el operador consultará si se cumple una condición u otra. Si una de las condiciones es evaluada como verdadera, realizará una acción determinada. 
+
+        Por ejemplo:
+        let numero = 5;
+        if(numero > 15 || numero < 10){
+            return 'El número cumple una de las condiciones'
+        } //Evaluamos si el número es mayor a 15 "OR" menor a 10. Mayor a 15 no es, la primera condición no se cumplió, pero se cumplió la segunda y como nos alcanza con que una de las condiciones se haya cumplido, retornamos el texto.
+    
+    .!: 
+        para finalizar, tenemos el operador "NOT", que como su nombre lo señala, es un operador de negación, es decir, que al elemento(variable o valor) al que le pongamos por delante este operador, significará lo contrario. 
+        Sería algo así: "Soy diestro" (true)
+                        !"Soy diestro" //Aquí estaría diciendo que no soy diestro. (false)
+        Por ejemplo:
+            let lugares_disponibles = true;
+            if(!lugares_disponibles){
+                    return 'Lo sentimos, las localidades se han agotado';
+            } // Iniciamos diciendo que hay todavía hay lugares disponsibles para el show y cuando NO haya más lugares, retornamos un mensaje de localidades agotadas.  
+
+
