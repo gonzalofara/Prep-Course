@@ -1,0 +1,55 @@
+***OBJETOS***
+Los objetos son pieza principal de Javascript. Nos permite almacenar gran cantidad de información en una variable.
+Pero... ¿Los arrays no hacen lo mismo? 
+Bueno, a diferencia de los arrays que nos permiten almacenar gran cantidad de información o elementos relacionados unos con otros, es decir que todos representan a una misma variable, los objetos por su parte tienen la capacidad de almacenar gran cantidad de información, pero sobre una sola cosa, sobre un elemento determinado. 
+Los objetos se componen de la siguiente manera:
+    let nombreVariable = {     //Utilizamos llaves {} y no [] como en los arrays.
+        propiedad: valor,      //la información se almacena en forma de key(propiedad) y su valor correspondiente.
+        propiedad: valor,      //Los valores pueden ser cualquier tipo de dato.   
+    }
+Otra de las diferencias, mientras en los arrays accedemos a sus valores a través de su [índice], en los objetos accederemos a sus valores a través de su clave(key).
+
+***Propiedades***
+Las propiedades en los objetos, como dijimos se llaman "key" es decir clave o llave. Esa denominación cobra sentido cuando queremos acceder a los valores de nuestro objeto. ¿Cómo lo hacemos? pues a través de su "key", ya que al ser únicos (no podemos tener keys con el mismo nombre) actúan como identificadores de nuestros valores. 
+Para acceder a sus valores lo hacemos invocando el nombre del objeto y utilizando la notación de punto o de corchetes. 
+    .***Notación de puntos***: llamamos al nombre del objeto, seguido de un punto '.' y el nombre de la propiedad(clave, key)
+        Por ejemplo:
+            nombreDelObjeto.nombrePropiedad -> nos retornará su valor. 
+    .***Notación de corchetes***: muy similar al anterior, pero en este caso llamamos al nombre del objeto, seguido de corchetes "[]" y dentro de ellos debemos colocar o un string, o un número o una variable que sea un string o un número, y que haga referencia al nombre de una propiedad(key).
+        Por ejemplo:
+            - nombreDelObjeto['nombrePropiedad']
+            -let nombre = 'nombre de la propiedad'
+            nombreDelObjeto[nombre]
+Por otra parte, si quisieramos agregar una propiedad (key) lo haríamos de forma muy similar a como accedemos a sus valores y propiedades.
+Debemos asegurarnos de que esa key no exista.
+    Por ejemplo:
+        -nombreDelObjeto['NUEVA PROPIEDAD'] = NUEVO VALOR
+        -nombreDelObjeto.nuevaPropiedad = nuevo valor
+
+Y si quisieramos eliminar una propiedad, lo haríamos a través del método "delete":
+    delete + nombreDelObjeto.nombrePropiedad
+
+
+***Métodos***
+Así como vimos que los distintos tipos de datos tienen sus métodos (.length, .filter, .toString, etc), nosotros podemos crear nuestros propios métodos para nuestros objetos. ¿Cómo lo haremos? asignaremos una función como valor de una propiedad(key):
+    let objeto = {
+        mi_metodo = function(){
+            return 'Este es un método'
+        }
+    }
+
+Ya hemos creado el método, nos falta invocarlo como cualquier otro método:
+    objeto.mi_metodo()
+
+    Como vemos, lo llamamos utilizando la notación de puntos al igual que otros métodos vistos y lo finalizamos con paréntesis "()" porque al fin y al cabo es una función lo que se está ejecutando.
+
+
+***Bucle For In***
+Los objetos al no tener un índice numérico al cual hacer referencia a la hora de iterar sobre ellos, utilizar el bucle "for" como lo hacíamos con los arrays no nos serviría. 
+En el caso de los objetos utilizaremos el bucle "for in" que iterará sobre todas las propiedades que haya en el objeto.
+Su sintaxis es muy similar a un bucle for, solo que dentro del paréntesis declaramos una variable que hará referencia a cada propiedad en particular, seguido de la palabra 'in" y el nombre del objeto. Por ejemplo:
+    for(let propiedad in nombreDelObjeto){
+        return `nombre de la propiedad: ${propiedad}, valor de la propiedad: ${nombreDelObjeto[propiedad]}`
+    }
+
+    Si quisieramos acceder a sus valores, como vemos, invocamos el nombre del objeto, seguido de corchetes "[]" y dentro de ellos el nombre de la variable temporal.
