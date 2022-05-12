@@ -1,0 +1,17 @@
+*** FUNCIONES CALLBACK ***
+Las funciones callback son funciones que se pasan como argumento a otra función. La función callback se llamará (invocará) dentro de la función en la cual se encuentra como argumento para realizar alguna acción. 
+    Por ejemplo:
+        function saludar_cb(nombre){
+            return 'Hola ' + nombre; 
+        }
+
+        function saludar(cb){   //Por convención, al argumento callback lo llamaremos "cb"
+            let nombre = prompt("Ingresa tu nombre: ");
+
+            cb(nombre);
+        }
+
+        saludar(saludar_cb);
+
+        
+El ejemplo anterior hace referencia a un callback sincrónico, es decir, que se ejecuta inmediatamente. Existen callbacks asíncronos, muy importantes y muy utilizados, que luego de ejecutar una acción sincrónica continúan ejecutando el código. 
