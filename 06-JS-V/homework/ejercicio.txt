@@ -1,0 +1,36 @@
+***Prototypes***
+Anteriormente vimos cómo crear objetos, asignarle propiedades y métodos propios.Si en varios objetos necesitábamos usar un mismo método debíamos declararlo dentro de cada uno de ellos.
+Las objetos prototipos en Javascript nos brindan la posibilidad de declrar estos métodos una vez y transmitirlo a cada uno de sus objetos, gracias a la propiedad prototype que almacena todos los métodos de una clase. Podemos decir, entonces, que los prototypes son la forma por la cua ls objetos heredan caracterísitcasentre sí.
+Entonces, podemos decir que los prototypes son funciones asociadas a un tipo de objeto determinado y solo serán utilizados en ellos.
+¿Cómo podemos crear un prototype?
+    nombreClase.prototype.nombreMétodo = function(){ tu código }
+
+    Por ejemplo: supongamos que tenemos una clase / objeto padre 'Cliente'
+
+        function Cliente(nombre, saldo){
+            this.nombre = nombre;
+            this.saldo = saldo;
+        }
+
+        - Ahora supongamos que queremos que cada Cliente tenga un método que le diga su saldo. Crearemos un prototype para que cada objeto de Cliente here este método.
+
+        Cliente.prototype.imprimirSaldo = function(){
+            return `${this.nombre} su saldo es de $${this.saldo}`
+        }
+
+*** CONSTRUCTORS ***
+Las clases en Javascript brindan una sintaxis más clara y simple para crear objetos y manejar la herencia basada en prototipos.
+Veremos que la forma de crear una clase es muy similar a la de un objeto. Se utiliza la palabra reservada class seguido de su nombre con la primera letra en mayúsculas, seguido de llaves "{}" que dentro de ellas se definen sus métodos y constructores(propiedades/caracteerísticas)
+    Por ejemplo:
+        class Persona {
+            constructor(nombre, apellido){
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+Los constructores, o método constructor, nos permiten crear e  instanciar un objeto creado a partir de una clase. 
+Cada clase podrá tener solo un constructor.
+    Por ejemplo: 
+        var persona1 = new Persona('Juan', 'Perez')
+
+    //Solo debemos instanciar Persona en una variable y le pasamos al igual que una función, los argumentos que nos exige el constructor y obtenemos un nuevo objeto de clase "persona1"
